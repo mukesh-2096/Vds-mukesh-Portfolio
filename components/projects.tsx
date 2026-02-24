@@ -33,6 +33,14 @@ const projects = [
         github: "https://github.com/mukesh-2096/Stunning-automobile.git",
         demo: "https://stunning-automobile.vercel.app/",
     },
+    {
+        title: "iCuisine",
+        description: "A cross-platform food delivery app connecting customers with local vendors through an intuitive dual-user interface with real-time order tracking.",
+        image: "/icuisine.png",
+        tags: ["Flutter", "Dart", "Firebase"],
+        github: "YOUR_GITHUB_REPO_URL_HERE",
+        demo: undefined,
+    },
 ];
 
 export function Projects() {
@@ -66,11 +74,13 @@ export function Projects() {
                                                 <Github className="h-5 w-5" />
                                             </Button>
                                         </Link>
-                                        <Link href={project.demo} target="_blank" rel="noopener noreferrer" title="Live Preview">
-                                            <Button size="icon" variant="secondary" className="rounded-full">
-                                                <ExternalLink className="h-5 w-5" />
-                                            </Button>
-                                        </Link>
+                                        {project.demo && (
+                                            <Link href={project.demo} target="_blank" rel="noopener noreferrer" title="Live Preview">
+                                                <Button size="icon" variant="secondary" className="rounded-full">
+                                                    <ExternalLink className="h-5 w-5" />
+                                                </Button>
+                                            </Link>
+                                        )}
                                     </div>
                                 </div>
                                 <CardHeader>
@@ -87,11 +97,19 @@ export function Projects() {
                                     </div>
                                 </CardContent>
                                 <CardFooter className="pt-4 border-t">
-                                    <Link href={project.demo} target="_blank" rel="noopener noreferrer" className="w-full">
-                                        <Button variant="ghost" className="w-full group/btn">
-                                            View Project <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
-                                        </Button>
-                                    </Link>
+                                    {project.demo ? (
+                                        <Link href={project.demo} target="_blank" rel="noopener noreferrer" className="w-full">
+                                            <Button variant="ghost" className="w-full group/btn">
+                                                View Project <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1" />
+                                            </Button>
+                                        </Link>
+                                    ) : (
+                                        <Link href={project.github} target="_blank" rel="noopener noreferrer" className="w-full">
+                                            <Button variant="ghost" className="w-full group/btn">
+                                                View Repository <Github className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
+                                            </Button>
+                                        </Link>
+                                    )}
                                 </CardFooter>
                             </Card>
                         </div>
