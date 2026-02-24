@@ -56,7 +56,8 @@ const skillCategories = [
             { name: "Unity", icon: "unity" },
             { name: "Vercel", icon: "vercel" },
             { name: "VS Code", icon: "/vs-code-icon.svg" },
-            { name: "Figma", icon: "figma" }
+            { name: "Figma", icon: "figma" },
+            { name: "WordPress", icon: "wordpress" }
         ]
     },
     {
